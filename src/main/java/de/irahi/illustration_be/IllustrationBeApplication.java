@@ -1,4 +1,4 @@
-package com.example.illustration_be;
+package de.irahi.illustration_be;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
