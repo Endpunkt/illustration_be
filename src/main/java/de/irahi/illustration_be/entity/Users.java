@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 @Access(AccessType.FIELD)
-public class User {
+public class Users {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -23,9 +23,6 @@ public class User {
 	@Column(name="nick")
 	private String nick;
 	
-	@Column(name="posts", columnDefinition= "TINYINT UNSIGNED")
-	private short posts;
-	
 	@Column(name="google_link")
 	private String googleLink;
 	
@@ -33,6 +30,6 @@ public class User {
 	private String avatar;
 	
 	public int hashCode() {
-		return Objects.hash(id, nick, posts, googleLink, avatar);
+		return Objects.hash(id, nick, googleLink, avatar);
 	}
 }

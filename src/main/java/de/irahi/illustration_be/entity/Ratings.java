@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 @Data
 @Access(AccessType.FIELD)
-public class Rating {
+public class Ratings {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -32,11 +32,11 @@ public class Rating {
 	//__________ M A N Y__T O__O N E______________________
 	@ManyToOne
 	@JoinColumn(name="user_id", referencedColumnName="id")
-	private User user;
+	private Users users;
 	
 	@ManyToOne
-	@JoinColumn(name="tale_id", referencedColumnName="id")//FK in the Rating-Table
-	private Tale tale;
+	@JoinColumn(name="tale_id", referencedColumnName="id")//FK in the Ratings-Table
+	private Tales tales;
 	
 	
 	private enum Status{

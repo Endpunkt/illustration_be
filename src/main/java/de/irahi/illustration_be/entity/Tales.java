@@ -17,7 +17,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Tale {
+public class Tales {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -29,8 +29,8 @@ public class Tale {
 	@Column(name="author")
 	private String author;
 	
-	@OneToMany(mappedBy="tale", cascade=CascadeType.ALL, fetch= FetchType.EAGER)
-	private List<Rating> rating;
+	@OneToMany(mappedBy="tales", cascade=CascadeType.ALL, fetch= FetchType.EAGER)
+	private List<Ratings> ratings;
 	
 	@Column(name="summary")
 	private String description;
@@ -38,12 +38,12 @@ public class Tale {
 	@Column(name="pages", columnDefinition="TINYINT UNSIGNED")
 	private short pages;
 	
-	@OneToMany(mappedBy="tale", cascade=CascadeType.ALL, fetch= FetchType.EAGER)
+	@OneToMany(mappedBy="tales", cascade=CascadeType.ALL, fetch= FetchType.EAGER)
 	private List<Figures> figures;
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, title, author, rating, description, pages, figures);
+		return Objects.hash(id, title, author, ratings, description, pages, figures);
 	}
 
 }
