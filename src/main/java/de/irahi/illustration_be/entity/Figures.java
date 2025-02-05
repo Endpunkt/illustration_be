@@ -37,7 +37,7 @@ public class Figures {
 	
 	@ManyToOne
 	@JoinColumn(name="tale_id", referencedColumnName = "id" ) // FK in the Figures-Tabelle
-	private Tale tale;
+	private Tales tales;
 	
 	@Override
 	public int hashCode() {
